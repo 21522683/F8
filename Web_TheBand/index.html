@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="shortcut icon" href="./assets/img/favicon/icon_web.png" type="image/x-icon">
     <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
 </head>
 <body>
     
@@ -37,6 +38,10 @@
                 <i class="search-icon ti-search"></i>
             </div>
             <!-- End search -->
+
+            <div id="id-mobile-menu" class="mobile-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z"/></svg>
+            </div>
         </div>
 
         <div id="slider">
@@ -92,7 +97,7 @@
                                 <h3 class="place-heading">New York</h3>
                                 <p class="place-time">Fri 27 Nov 2016</p>
                                 <p class="place-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="btn js-buy-ticket">Buy Tickets</button>
+                                <button class="btn js-buy-ticket btn-buy-full-width">Buy Tickets</button>
                             </div>
                         </div>
 
@@ -102,7 +107,7 @@
                                 <h3 class="place-heading">Paris</h3>
                                 <p class="place-time">Sat 28 Nov 2016</p>
                                 <p class="place-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="btn js-buy-ticket">Buy Tickets</button>
+                                <button class="btn js-buy-ticket btn-buy-full-width">Buy Tickets</button>
                             </div>
                         </div>
 
@@ -112,7 +117,7 @@
                                 <h3 class="place-heading">New York</h3>
                                 <p class="place-time">Sun 29 Nov 2016</p>
                                 <p class="place-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="btn js-buy-ticket">Buy Tickets</button>
+                                <button class="btn js-buy-ticket btn-buy-full-width">Buy Tickets</button>
                             </div>
                         </div>
                     </div>
@@ -126,32 +131,32 @@
                 <p class="section-sub-heading">Fan? Drop a note!</p>
 
                 <div class="row contact-content">
-                    <div class="col col-half contact-info">
+                    <div class="col col-half col-full contact-info">
                         <p><i class="ti-location-pin"></i>Chicago, US</p>
                         <p><i class="ti-mobile"></i>Phone: +00 151515</p>
                         <p><i class="ti-email"></i>Email: mail@mail.com</p>
                     </div>
 
-                    <div class="col col-half contact-form">
+                    <div class="col col-half s-col-full contact-form">
                         <form action="">
 
                             <div class="row">
-                                <div class="col col-half">
+                                <div class="col col-half s-col-full s-mt-8">
                                     <input type="text" placeholder="Name" required class="form-control">
                                 </div>
-                                <div class="col col-half">
+                                <div class="col col-half s-col-full s-mt-8">
                                     <input type="email" placeholder="Email" required class="form-control">
                                 </div>
                             
                             </div>
 
                             <div class="row mt-8">
-                                <div class="col col-full">
+                                <div class="col s-col-full col-full">
                                     <input type="text" placeholder="Message" required class="form-control">
                                 </div>
                             </div>
 
-                            <input class="btn mt-16" type="submit" value="SEND">
+                            <input class="btn mt-16 s-full-width" type="submit" value="SEND">
                         </form>
                     </div>
 
@@ -246,6 +251,35 @@
         modalContainer.addEventListener('click', (event) => {
             event.stopPropagation()
         })
+
+        var header = document.getElementById('header');
+        var menuMobile = document.getElementById('id-mobile-menu')
+        var heightClient = header.clientHeight;
+        menuMobile.onclick = () => {
+            var isClose = header.clientHeight === heightClient;
+            if (isClose)
+            {
+                header.style.height = 'auto';
+            }
+            else {
+                header.style.height = null;
+            }
+        }
+
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]')
+        for (var i = 0 ;i < menuItems.length ;i++) {
+            var menuItem = menuItems [i]
+            
+            menuItem.onclick = function(event) {
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav')
+                if (isParentMenu) {
+                    event.preventDefault()
+                } else {
+                    header.style.height = null
+                }
+            }
+        }
+
     </script>
 </body>
 </html>

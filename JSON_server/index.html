@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .action {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Danh sách khóa học</h2>
+        <ul id="list-courses">
+
+        </ul>
+    </div>
+
+    <div class="action">
+        <div>
+            <label>Course name: </label>
+            <input type="text" name="name">
+        </div>
+
+        <div style="margin-top: 20px">
+            <label>Course description: </label>
+            <input type="text" name="description">
+        </div>
+
+        <div style="margin-top: 20px">
+            <button style="margin-right: 20px" id="create">Create course</button>
+            <button style="margin-left: 20px" id="update">Update course</button>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>

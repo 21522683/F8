@@ -90,7 +90,7 @@ html {
     height: 46.5px;
     background-color: #000;
     position: fixed;
-    top: 0;
+    top: 0; 
     left: 0;
     right: 0;
     z-index: 1;
@@ -143,15 +143,23 @@ html {
     padding: 0 12px;
     line-height: 38px;
 }
-
+#header .mobile-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    float: right;
+    padding: 10px;
+    display: none;
+}
 #header .search-btn {
     float: right;
     padding: 0 21px;
-    
 }
+#header .mobile-menu:hover,
 #header .search-btn:hover {
-    background-color: #f44336;
+    background-color: #CCC;
     cursor: pointer;
+    color: #000;
 }
 #header .search-icon {
     font-size: 20px;
@@ -183,9 +191,12 @@ html {
 
 #content .content-section {
     width: 800px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 64px 0;
+    padding: 64px 0 112px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 #content .section-heading {
     font-size: 30px;
