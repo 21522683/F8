@@ -57,7 +57,7 @@ const app = {
         },
 	    {
             name: 'Ngày Mai Em Đi',
-            singer: 'Soobin Hoàng Sơn - Lê Hiế',
+            singer: 'Soobin Hoàng Sơn - Lê Hiếu',
             path: './assets/musics/song_4.mp3',
             image: './assets/images/image_4.jpg',
         },
@@ -153,7 +153,7 @@ const app = {
         const cd_thumbAnimate = cdThumb.animate([
             {transform: 'rotate(360deg)'}
         ], {
-            duration: 50000,
+            duration: 90000,
             interations: Infinity
         })
 
