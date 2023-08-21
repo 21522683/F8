@@ -2,6 +2,7 @@
     --white-color: #fff;
     --black-color: #000;
     --text-color: #333;
+    --primary-color: #EE4D2D;
 }
 
 * {
@@ -9,7 +10,7 @@
 }
 
 html {
-    /* 100% tương đương 16px, 62.6% tương đương với 10px*/
+    /* 100% tương đương 16px, 62.5% tương đương với 10px*/
     font-size: 62.5%;
     line-height: 1.6rem;
     font-family: 'Roboto', 'sans-serif';
@@ -29,4 +30,13 @@ html {
 .grid__row {
     display: flex;
     flex-wrap: wrap;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
