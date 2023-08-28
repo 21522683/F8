@@ -8,6 +8,8 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
         <link rel="stylesheet" href="./assets/css/base.css">
         <link rel="stylesheet" href="./assets/css/main.css">
+        <link rel="stylesheet" href="./assets/css/grid.css">
+        <link rel="stylesheet" href="./assets/css/responsive.css">
         <link
             href="https://fonts.googleapis.com/css?family=Roboto:300,400, 500, 700display=swapsubset=vietnamese"
             rel="stylesheet">
@@ -18,8 +20,8 @@
     <body>
         <div class="app">
             <header class="header">
-                <div class="grid">
-                    <nav class="header__navbar">
+                <div class="grid wide">
+                    <nav class="header__navbar hide-on-mobile-tablet">
                         <ul class="header__navbar-list">
                             <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate ">
                                 Vào cửa hàng trên ứng dụng của Tính
@@ -163,7 +165,11 @@
                     </nav>
 
                     <div class="header-with-search">
-                        <div class="header__logo">
+                        <label for="mobile-search-checkbox" class="header__mobile-search">
+                            <i class="header__mobile-search-icon fas fa-search"></i>
+                        </label>
+
+                        <div class="header__logo hide-on-tablet">
                             <a href="/" class="header__logo-link">
                                 <svg viewBox="0 0 192 65" class="header__logo-img">
                                     <g fill-rule="evenodd">
@@ -174,6 +180,9 @@
                                 </svg>
                             </a>
                         </div>
+
+                        <input type="checkbox" hidden class="header__search-checkbox" id="mobile-search-checkbox">
+
                         <!-- Search layout -->
                         <div class="header__search">
                             <div class="header__search-input-wrap">
@@ -320,12 +329,30 @@
                         </div>
                     </div>
                 </div>
+
+                <ul class="header__sort-bar">
+                    <li class="header__sort-item">
+                        <a href="" class="header__sort-link">Liên quan</a>
+                    </li>
+
+                    <li class="header__sort-item header__sort-item--active">
+                        <a href="" class="header__sort-link">Mới nhất</a>
+                    </li>
+
+                    <li class="header__sort-item">
+                        <a href="" class="header__sort-link">Bán chạy</a>
+                    </li>
+
+                    <li class="header__sort-item">
+                        <a href="" class="header__sort-link">Giá</a>
+                    </li>
+                </ul>
             </header>
 
             <div class="app__container">
-                <div class="grid">
-                    <div class="grid__row app__contain">
-                        <div class="grid__column-2">
+                <div class="grid wide">
+                    <div class="row sm-gutter app__contain">
+                        <div class="col l-2 c-0 m-0">
                             <nav class="category">
                                 <h3 class="category__heading">
                                     <i class="category__heading-icon fa-solid fa-list"></i>
@@ -348,8 +375,8 @@
                             </nav>
                         </div>
                         
-                        <div class="grid__column-10">
-                            <div class="home-filter">
+                        <div class="col l-10 m-12 c-12">
+                            <div class="home-filter hide-on-mobile-tablet">
                                 <span class="home-filter_label">Sắp xếp theo</span>
                                 <button class="home-filter-btn btn">Phổ biến</button>
                                 <button class="home-filter-btn btn btn--primary">Mới nhất</button>
@@ -388,10 +415,43 @@
                                 </div>
                             </div>
 
+                            <nav class="mobile-category">
+                                <ul class="mobile-category__list">
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Điện thoại của hãng Iphone</a>
+                                    </li>
+
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Điện thoại của hãng SamSung</a>
+                                    </li>
+
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Điện thoại của hãng OPPO</a>
+                                    </li>
+
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Điện thoại của hãng Realme</a>
+                                    </li>
+
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Điện thoại của hãng Xiaomi</a>
+                                    </li>
+
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Điện thoại của hãng Nokia</a>
+                                    </li>
+
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link"> Phụ kiện khác</a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+
                             <div class="home-product">
-                                <div class="grid__row">
+                                <div class="row sm-gutter">
                                     <!-- Product item -->
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/ip14.jpg);"></div>
                                             <h5 class="home-product-item__name">Iphone 14 pro max chính hãng, BEST SELLER vào ngày 7/9/2023 với giá ưu đãi cực SỐC</h5>
@@ -428,7 +488,7 @@
                                         </a>
                                     </div>
 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/nokia.jpg);"></div>
                                             <h5 class="home-product-item__name">Nokia pro max chính hãng, BEST SELLER vào ngày 7/9/2023 với giá ưu đãi cực SỐC</h5>
@@ -465,7 +525,7 @@
                                         </a>
                                     </div>
                                     
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/ip15.jpg);"></div>
                                             <h5 class="home-product-item__name">Iphone 15 pro max chính hãng, BEST SELLER vào ngày 7/9/2023 với giá ưu đãi cực SỐC</h5>
@@ -502,7 +562,7 @@
                                         </a>
                                     </div>
 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/ip14.jpg);"></div>
                                             <h5 class="home-product-item__name">Iphone 14 pro max chính hãng, BEST SELLER vào ngày 7/9/2023 với giá ưu đãi cực SỐC</h5>
@@ -539,7 +599,7 @@
                                         </a>
                                     </div>
                                     
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/ip15.jpg);"></div>
                                             <h5 class="home-product-item__name">Iphone 15 pro max chính hãng, BEST SELLER vào ngày 7/9/2023 với giá ưu đãi cực SỐC</h5>
@@ -576,7 +636,7 @@
                                         </a>
                                     </div>
 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/nokia.jpg);"></div>
                                             <h5 class="home-product-item__name">Nokia pro max chính hãng, BEST SELLER vào ngày 7/9/2023 với giá ưu đãi cực SỐC</h5>
@@ -613,7 +673,7 @@
                                         </a>
                                     </div>
 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/ip14.jpg);"></div>
                                             <h5 class="home-product-item__name">Iphone 14 pro max chính hãng, BEST SELLER vào ngày 7/9/2023 với giá ưu đãi cực SỐC</h5>
@@ -650,7 +710,7 @@
                                         </a>
                                     </div>
 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/ip15.jpg);"></div>
                                             <h5 class="home-product-item__name">Iphone 15 pro max chính hãng, BEST SELLER vào ngày 7/9/2023 với giá ưu đãi cực SỐC</h5>
@@ -687,7 +747,7 @@
                                         </a>
                                     </div>
 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/ip14.jpg);"></div>
                                             <h5 class="home-product-item__name">Iphone 14 pro max chính hãng, BEST SELLER vào ngày 7/9/2023 với giá ưu đãi cực SỐC</h5>
@@ -724,7 +784,7 @@
                                         </a>
                                     </div>
 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/nokia.jpg);"></div>
                                             <h5 class="home-product-item__name">Nokia pro max chính hãng, BEST SELLER vào ngày 7/9/2023 với giá ưu đãi cực SỐC</h5>
@@ -761,7 +821,7 @@
                                         </a>
                                     </div>
                                     
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/ip15.jpg);"></div>
                                             <h5 class="home-product-item__name">Iphone 15 pro max chính hãng, BEST SELLER vào ngày 7/9/2023 với giá ưu đãi cực SỐC</h5>
@@ -798,7 +858,7 @@
                                         </a>
                                     </div>
 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/ip14.jpg);"></div>
                                             <h5 class="home-product-item__name">Iphone 14 pro max chính hãng, BEST SELLER vào ngày 7/9/2023 với giá ưu đãi cực SỐC</h5>
@@ -835,7 +895,7 @@
                                         </a>
                                     </div>
                                     
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/ip15.jpg);"></div>
                                             <h5 class="home-product-item__name">Iphone 15 pro max chính hãng, BEST SELLER vào ngày 7/9/2023 với giá ưu đãi cực SỐC</h5>
@@ -872,7 +932,7 @@
                                         </a>
                                     </div>
 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/nokia.jpg);"></div>
                                             <h5 class="home-product-item__name">Nokia pro max chính hãng, BEST SELLER vào ngày 7/9/2023 với giá ưu đãi cực SỐC</h5>
@@ -909,7 +969,7 @@
                                         </a>
                                     </div>
 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/ip14.jpg);"></div>
                                             <h5 class="home-product-item__name">Iphone 14 pro max chính hãng, BEST SELLER vào ngày 7/9/2023 với giá ưu đãi cực SỐC</h5>
@@ -946,7 +1006,7 @@
                                         </a>
                                     </div>
 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/ip15.jpg);"></div>
                                             <h5 class="home-product-item__name">Iphone 15 pro max chính hãng, BEST SELLER vào ngày 7/9/2023 với giá ưu đãi cực SỐC</h5>
@@ -983,7 +1043,7 @@
                                         </a>
                                     </div>
                                     
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/ip15.jpg);"></div>
                                             <h5 class="home-product-item__name">Iphone 15 pro max chính hãng, BEST SELLER vào ngày 7/9/2023 với giá ưu đãi cực SỐC</h5>
@@ -1020,7 +1080,7 @@
                                         </a>
                                     </div>
 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/ip14.jpg);"></div>
                                             <h5 class="home-product-item__name">Iphone 14 pro max chính hãng, BEST SELLER vào ngày 7/9/2023 với giá ưu đãi cực SỐC</h5>
@@ -1102,9 +1162,9 @@
             </div>
 
             <footer class="footer">
-                <div class="grid">
-                    <div class="grid__row">
-                        <div class="grid__column-2-4">
+                <div class="grid wide footer__content">
+                    <div class="row">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">Chăm sóc khách hàng</h3>
                             <ul class="footer__list">
                                 <li class="footer__item">
@@ -1118,7 +1178,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="grid__column-2-4">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">Giới thiệu</h3>
                             <ul class="footer__list">
                                 <li class="footer__item">
@@ -1132,7 +1192,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="grid__column-2-4">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">Danh mục</h3>
                             <ul class="footer__list">
                                 <li class="footer__item">
@@ -1146,7 +1206,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="grid__column-2-4">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">Theo dõi</h3>
                             <ul class="footer__list">
                                 <li class="footer__item">
@@ -1169,7 +1229,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="grid__column-2-4">
+                        <div class="col l-2-4 m-8 c-12">
                             <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
                             <div class="footer__download">
                                 <img src="./assets/img/qr_code.png" alt="Download QR" class="footer__download-qr">
@@ -1187,7 +1247,7 @@
                 </div>
 
                 <div class="footer__bottom">
-                    <div class="grid">
+                    <div class="grid wide">
                         <p class="footer__text">Bản quyền thuộc về anh Phan Trọng Tính - 0379361210</p>
                     </div>
                 </div>
