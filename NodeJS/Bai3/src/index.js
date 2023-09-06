@@ -5,6 +5,10 @@ import express from 'express';
 import morgan from 'morgan';
 import { engine } from 'express-handlebars';
 import route from './routes/index.js';
+import db from './config/db/index.js'
+
+// Connect to DB 
+db.connect();
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
