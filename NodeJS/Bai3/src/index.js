@@ -3,9 +3,10 @@ import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import express from 'express';
 import morgan from 'morgan';
-import { engine } from 'express-handlebars';
+import handlebars from 'express-handlebars';
 import route from './routes/index.js';
 import db from './config/db/index.js'
+import methodOverride  from 'method-override'
 
 // Connect to DB 
 db.connect();
@@ -25,14 +26,23 @@ app.use(
 ); // Với form thì dùng cái này để xử lý
 app.use(express.json()); // Gửi dữ liệu lên với code javascript như: fetch, XMLhttp, axios ... thì dùng thg này
 
+// html chỉ hỗ trợ 2 phương thức GET và POST
+// ta cần dùng cái này để override các phương thức khác mà 
+// ta muốn dùng . VD như PUT, PATCH, DELETE ... 
+app.use(methodOverride('_method'));
+
+
 //HTTP logger
 app.use(morgan('combined'));
 
 //Template engine
 app.engine(
     'hbs',
-    engine({
+    handlebars.engine({
         extname: '.hbs',
+        helpers: {
+            sum: (a, b) => a + b,
+        }
     }),
 );
 app.set('view engine', 'hbs');

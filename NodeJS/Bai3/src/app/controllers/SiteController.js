@@ -12,8 +12,6 @@ class SiteController {
                 })
             })
             .catch(error => next(error));
-
-        // res.render('home');
     }
 
     // GET /search
